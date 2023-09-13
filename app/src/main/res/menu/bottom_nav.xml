@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/firstMenuTitle"
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home_svg"/>
+    <item android:title="@string/secondMenuTitle"
+        android:id="@+id/listFragment"
+        android:icon="@drawable/list_svg"/>
+    <item android:title="@string/thirdMenuTitle"
+        android:id="@+id/cameraFragment"
+        android:icon="@drawable/camera_svg"/>
+    <item android:title="@string/fourthMenuTitle"
+        android:id="@+id/datesFragment"
+        android:icon="@drawable/calendar_svg"/>
+</menu>
