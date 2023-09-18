@@ -1,60 +1,53 @@
 package com.tesinitsyn.thirdprectiseapi34.ui.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.tesinitsyn.thirdprectiseapi34.R
+import com.tesinitsyn.thirdprectiseapi34.data.Item
+import com.tesinitsyn.thirdprectiseapi34.databinding.FragmentDatesBinding
+import com.tesinitsyn.thirdprectiseapi34.ui.adapters.ListAdapter
+import java.io.File
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DatesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DatesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentDatesBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dates, container, false)
-    }
+        binding = FragmentDatesBinding.inflate(inflater, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DatesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DatesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        val adapter = ListAdapter()
+
+
+        var tempList: MutableList<Item> = ArrayList()
+
+        val file = File(
+            requireContext().getExternalFilesDir("Pictures/CameraX-Image/"),
+            "Date.txt"
+        )
+
+        binding.rewriteBtn.setOnClickListener {
+            file.writeText("")
+            file.forEachLine { tempList.add(Item(0, it)) }
+            adapter.setData(tempList)
+            binding.recyclerView.adapter = adapter
+        }
+        file.forEachLine { tempList.add(Item(0, it)) }
+
+
+
+
+        Log.d("array", tempList.toString())
+        adapter.setData(tempList)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        return binding.root
     }
 }
