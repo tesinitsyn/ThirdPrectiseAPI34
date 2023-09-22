@@ -1,4 +1,4 @@
-package com.tesinitsyn.thirdprectiseapi34.data
+package com.tesinitsyn.thirdprectiseapi34.data.item
 
 
 import androidx.room.Entity

@@ -4,9 +4,9 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.tesinitsyn.thirdprectiseapi34.data.Item
-import com.tesinitsyn.thirdprectiseapi34.data.ItemDB
-import com.tesinitsyn.thirdprectiseapi34.data.ItemRepository
+import com.tesinitsyn.thirdprectiseapi34.data.item.Item
+import com.tesinitsyn.thirdprectiseapi34.data.item.ItemDB
+import com.tesinitsyn.thirdprectiseapi34.data.item.ItemRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

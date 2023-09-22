@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.tesinitsyn.thirdprectiseapi34.R
-import com.tesinitsyn.thirdprectiseapi34.data.Item
+import com.tesinitsyn.thirdprectiseapi34.data.item.Item
 import com.tesinitsyn.thirdprectiseapi34.databinding.FragmentDatesBinding
 import com.tesinitsyn.thirdprectiseapi34.ui.adapters.ListAdapter
 import java.io.File

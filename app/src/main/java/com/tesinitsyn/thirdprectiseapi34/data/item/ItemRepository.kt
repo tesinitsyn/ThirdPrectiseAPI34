@@ -1,6 +1,8 @@
-package com.tesinitsyn.thirdprectiseapi34.data
+package com.tesinitsyn.thirdprectiseapi34.data.item
 
 import androidx.lifecycle.LiveData
+import com.tesinitsyn.thirdprectiseapi34.data.item.Item
+import com.tesinitsyn.thirdprectiseapi34.data.item.ItemDAO
 
 class ItemRepository(private val itemDAO: ItemDAO) {
 

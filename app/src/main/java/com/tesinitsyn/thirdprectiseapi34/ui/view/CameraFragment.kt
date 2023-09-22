@@ -46,9 +46,6 @@ class CameraFragment : Fragment() {
         binding.shotButton.setOnClickListener {
             takePhoto()
         }
-//        binding.listBtn.setOnClickListener {
-//            findNavController().navigate(R.id.action_secondFragment_to_dateListFragment)
-//        }
         return binding.root
     }
 

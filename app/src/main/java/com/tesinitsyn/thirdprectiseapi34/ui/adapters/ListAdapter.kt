@@ -1,9 +1,10 @@
 package com.tesinitsyn.thirdprectiseapi34.ui.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tesinitsyn.thirdprectiseapi34.data.Item
+import com.tesinitsyn.thirdprectiseapi34.data.item.Item
 import com.tesinitsyn.thirdprectiseapi34.databinding.ItemBinding
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
@@ -26,8 +27,10 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         binding.nameTxt.text = currentItem.name.toString()
     }
 
+
     fun setData(item: List<Item>) {
         this.itemList = item
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {

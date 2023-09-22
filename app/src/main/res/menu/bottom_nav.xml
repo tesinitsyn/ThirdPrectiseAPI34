@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/firstMenuTitle"
+    <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/home_svg"/>
-    <item android:title="@string/secondMenuTitle"
+        android:icon="@drawable/home_svg"
+        android:title="@string/firstMenuTitle" />
+    <item
         android:id="@+id/listFragment"
-        android:icon="@drawable/list_svg"/>
-    <item android:title="@string/thirdMenuTitle"
+        android:icon="@drawable/gallery_svg"
+        android:title="@string/secondMenuTitle" />
+    <item
         android:id="@+id/cameraFragment"
-        android:icon="@drawable/camera_svg"/>
-    <item android:title="@string/fourthMenuTitle"
+        android:icon="@drawable/camera_svg"
+        android:title="@string/thirdMenuTitle" />
+    <item
         android:id="@+id/datesFragment"
-        android:icon="@drawable/calendar_svg"/>
+        android:icon="@drawable/calendar_svg"
+        android:title="@string/fourthMenuTitle" />
+    <item
+        android:id="@+id/retrofitFragment"
+        android:icon="@drawable/internet_svg"
+        android:title="@string/fifthMenuTitle" />
 </menu>

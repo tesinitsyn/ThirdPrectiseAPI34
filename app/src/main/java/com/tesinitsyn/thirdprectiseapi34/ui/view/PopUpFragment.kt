@@ -1,13 +1,16 @@
 package com.tesinitsyn.thirdprectiseapi34.ui.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.setFragmentResult
 import androidx.lifecycle.ViewModelProvider
-import com.tesinitsyn.thirdprectiseapi34.data.Item
+import com.tesinitsyn.thirdprectiseapi34.data.item.Item
 import com.tesinitsyn.thirdprectiseapi34.databinding.FragmentPopUpBinding
 import com.tesinitsyn.thirdprectiseapi34.ui.viewModel.ItemViewModel
 
@@ -26,14 +29,13 @@ class PopUpFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPopUpBinding.inflate(inflater, container, false)
-        mItemVM = ViewModelProvider(this)[ItemViewModel::class.java]
         binding.addButtonInPopUp.setOnClickListener {
             val tempName = binding.inputItem.text.toString()
             if(tempName.isEmpty()){
                 Toast.makeText(requireContext(), "Write smth man", Toast.LENGTH_LONG).show()
             }else{
-                val item = Item(0, tempName)
-                mItemVM.addItem(item)
+                Log.d("idk", tempName)
+                setFragmentResult("requestKey", bundleOf("bundleKey" to tempName))
             }
             dismiss()
         }
